@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Areas | Monthe Marumo & Co</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="/css/test.css"> -->
+    <!-- <link rel="stylesheet" href="/css/vendor.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar-content">
+
+            <div class="nav-items">
+                <div class="nav-item">
+                    <a href="#">
+                        <div id="logo">
+                            <img src="assets/img/monthe-marumo&co-logo.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-items">
+                <div class="nav-item"><a href="index.html">Home</a></div>
+                <div class="nav-item"><a href="industries.html">Industries</a></div>
+                <div class="nav-item"><a href="practiceareas.html">Practices</a></div>
+                <div class="nav-item"><a href="attorneys.html">Attorneys</a></div>
+                <div class="nav-item"><a href="about.html">About</a></div>
+                <div class="nav-item"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+    </nav>
+    <div class="main-container2">
+        <section class="practice-areas-hero-section">
+            <div class="practice-areas-hero-wrapper">
+                <div class="practice-areas-hero-text">
+                    <span class="sub-header">Practice Areas</span>
+                    <h1>We are Here to Assist You in Resolving Your Legal Matters.</h1>
+                    <a href="#" class="primary-btn">
+                        <span>Book Appointment</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path
+                                d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="practice-areas-hero-images">
+                    <div>
+                        <!-- <img src="https://images.pexels.com/photos/4427550/pexels-photo-4427550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            alt="Placeholder Image"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="expertise-section container-default">
+            <div class="expertise-container">
+                <span class="sub-header">Our Expertise</span>
+                <h2>Our Legal Practice Areas</h2>
+                <p>
+                    Nucimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+                    ruas molestias excepturi sint occaecati cupiditate non provident.
+                </p>
+            </div>
+        
+            <div class="practice-areas-list" id="practiceAreasList">
+                <!-- Practice cards injected here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Get in Touch</h3>
+                    <p>Get in touch with us. Let’s work together to find the best legal solutions for your needs.</p>
+                    <p> <a href="mailto:partners@monthemarumo.com">partners@monthemarumo.com</a></p>
+                </div>
+        
+                <div class="footer-section">
+                    <h3>Where To Find Us</h3>
+                    <p>Unit 8G Portion 122 Millenium Park<br>P.O.Box 1991<br>Gaborone</p>
+                </div>
+        
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Telephone: <a href="tel:+2673951984">+267 395 1984</a></p>
+                    <p>Fax: +267 318 5016</p>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p>&copy; 2024 Monthe Marumo. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.6.3/dist/smooth-scrollbar.js"></script> -->
+    <script>
+        // Team Animation
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Pin the header to stick 10% from the top
+        gsap.to('.team-header', {
+            scrollTrigger: {
+                trigger: '.team-section', // Trigger when the section is in view
+                start: 'top top', // Start when the section reaches the top of the viewport
+                end: 'bottom top', // End when the section scrolls past the top of the viewport
+                scrub: true, // Smooth scrolling behavior
+                pin: '.team-header', // Pin the header during scrolling
+                // markers: true, // Optional, for debugging purposes
+                onLeave: () => {
+                    // Release the pin once the section scroll is complete
+                },
+                onEnterBack: () => {
+                    // Make sure the header comes back when scrolling back into the section
+                }
+            }
+        });
+
+ </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('.reveal-type').forEach((char) => {
+            const bg = char.dataset.bgColor;
+            const fg = char.dataset.fgColor;
+
+            const text = new SplitType(char, { types: 'chars' });
+
+            gsap.fromTo(text.chars, {
+                color: bg,
+            }, {
+                color: fg,
+                duration: 0.3,
+                stagger: 0.02,
+                scrollTrigger: {
+                    trigger: char,
+                    start: 'top 80%',
+                    end: 'top 20%',
+                    scrub: true,
+                    markers: false,
+                    toggleActions: 'play play reverse reverse'
+                }
+            });
+        });
+
+        const tl = gsap.timeline();
+
+        tl.from(".line span", 1.8, {
+            y: 100,
+            ease: "power4.out",
+            delay: 1,
+            skewY: 7,
+            stagger: {
+                amount: 0.3
+            }
+        })
+
+        const lenis = new Lenis();
+
+        lenis.on('scroll', (e) => {
+            console.log(e);
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
+
+    <script>
+        // Loader Animations
+        const textWrapper = document.querySelector(".loader-text");
+        textWrapper.innerHTML = textWrapper.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+        );
+
+        anime.timeline().add({
+            targets: ".loader-text .letter",
+            translateX: [40, 0],
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 1200,
+            delay: (el, i) => 2400 + 30 * i,
+        });
+
+        gsap.from(".loader-wrapper", 2, { scale: 0.8, ease: "power1.inOut" });
+        gsap.from(".loader", 2, { top: "100%", ease: "power3.inOut" });
+        gsap.to(".loader-wrapper, .pre-loader", 1, { scale: 1.5, opacity: 0, display: "none", ease: "power3.inOut", delay: 2 });
+        gsap.from(".revealer", 1, { width: "0", ease: "power3.inOut", delay: 3 });
+        gsap.to(".revealer", 0.8, { left: "100%", ease: "power3.inOut", delay: 4 });
+        gsap.to(".loader-text-wrapper", 0.2, { opacity: 0, display: "none", ease: "power3.inOut", delay: 4 });
+        gsap.from(".col-left", 1, { left: "-100%", ease: "power3.inOut", delay: 4.5 });
+        gsap.from(".col-left .copy > div", 1, { x: -40, opacity: 0, ease: "power3.inOut", delay: 5, stagger: { amount: 0.3 } });
+        gsap.from(".col-right .header", 1, { x: -20, opacity: 0, ease: "power3.inOut", delay: 5.5 });
+
+
+    </script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/practice-areas.js"></script>
+
+
+</body>
+
+</html>

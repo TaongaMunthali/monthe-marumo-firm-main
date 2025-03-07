@@ -1,0 +1,611 @@
+@charset "UTF-8";
+/* =================================================================== 
+ * Mueller Main Stylesheet
+ * Template Ver. 1.0.0
+ * 06-21-2022
+ * ------------------------------------------------------------------
+ *
+ * TOC:
+ *
+ * # SETTINGS
+ *      ## fonts 
+ *      ## colors
+ *      ## spacing and typescale
+ *      ## grid variables
+ * # NORMALIZE
+ * # BASE SETUP
+ * # GRID
+ *      ## large screen devices
+ *      ## medium screen devices 
+ *      ## tablet devices 
+ *      ## mobile devices 
+ *      ## small screen devices
+ *      ## additional column stackpoints
+ * # UTILITY CLASSES
+ * # TYPOGRAPHY
+ *      ## base type styles
+ *      ## additional typography & helper classes
+ *      ## lists
+ *      ## spacing
+ * # PRELOADER
+ *      ## page loaded
+ * # FORM
+ *      ## style placeholder text
+ *      ## change autocomplete styles in Chrome
+ * # BUTTONS
+ * # TABLE
+ * # COMPONENTS
+ *      ## pagination
+ *      ## alert box 
+ *      ## skillbars
+ *      ## stats tabs
+ * # PROJECT-WIDE SHARED STYLES
+ *      ## theme-specific typography classes
+ *      ## media classes
+ *      ## section header
+ *      ## list block
+ *      ## swiper overrides
+ * # PAGE WRAP
+ * # SITE HEADER
+ *      ## logo
+ *      ## main navigation
+ *      ## header social
+ *      ## mobile menu toggle
+ * # INTRO
+ *      ## intro background
+ *      ## intro content
+ *      ## intro scroll down
+ *      ## intro transitions
+ * # ABOUT
+ * # SERVICES
+ * # PORTFOLIO
+ *      ## bricks masonry 
+ *      ## masonry entries 
+ *      ## modal popup
+ * # CLIENTS
+ * # TESTIMONIALS
+ *      ## testimonial slider 
+ * # FOOTER
+ *      ## contact btn
+ *      ## subscription form
+ *      ## footer social
+ *      ## copyright
+ *      ## go top
+ *
+ * ------------------------------------------------------------------ */
+
+
+/* ===================================================================
+ * # SETTINGS
+ *
+ *
+ * ------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------- 
+ * ## fonts 
+ * ------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700&display=swap");
+
+:root {
+    --font-1    : "Inter", sans-serif;
+    --font-2    : "Manrope", sans-serif;
+
+    /* monospace
+     */
+    --font-mono : Consolas, "Andale Mono", Courier, "Courier New", monospace;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## colors
+ * ------------------------------------------------------------------- */
+:root {
+
+    /* color-1(#f26522)
+     * color-2(#035d5c)
+     */
+    --color-1                      : hsla(19, 89%, 54%, 1);
+    --color-2                      : hsla(179, 94%, 19%, 1);
+
+    /* theme color variations
+     */
+    --color-1-lightest             : hsla(19, 89%, 84%, 1);
+    --color-1-lighter              : hsla(19, 89%, 74%, 1);
+    --color-1-light                : hsla(19, 89%, 64%, 1);
+    --color-1-dark                 : hsla(19, 89%, 44%, 1);
+    --color-1-darker               : hsla(19, 89%, 34%, 1);
+    --color-1-darkest              : hsla(19, 89%, 24%, 1);
+    --color-2-lightest             : hsla(179, 94%, 49%, 1);
+    --color-2-lighter              : hsla(179, 94%, 39%, 1);
+    --color-2-light                : hsla(179, 94%, 29%, 1);
+    --color-2-dark                 : hsla(179, 94%, 9%, 1);
+    --color-2-darker               : hsla(179, 94%, 1%, 1);
+
+    /* feedback colors
+     * color-error(#ffd1d2), color-success(#c8e675), 
+     * color-info(#d7ecfb), color-notice(#fff099)
+     */
+    --color-error                  : hsla(359, 100%, 91%, 1);
+    --color-success                : hsla(76, 69%, 68%, 1);
+    --color-info                   : hsla(205, 82%, 91%, 1);
+    --color-notice                 : hsla(51, 100%, 80%, 1);
+    --color-error-content          : hsla(359, 50%, 50%, 1);
+    --color-success-content        : hsla(76, 29%, 28%, 1);
+    --color-info-content           : hsla(205, 32%, 31%, 1);
+    --color-notice-content         : hsla(51, 30%, 30%, 1);
+
+    /* shades 
+     * generated using 
+     * Tint & Shade Generator 
+     * (https://maketintsandshades.com/)
+     */
+    --color-black                  : #000000;
+    --color-gray-19                : #161616;
+    --color-gray-18                : #2c2c2c;
+    --color-gray-17                : #424241;
+    --color-gray-16                : #585857;
+    --color-gray-15                : #6e6e6d;
+    --color-gray-14                : #848383;
+    --color-gray-13                : #9a9999;
+    --color-gray-12                : #b0afae;
+    --color-gray-11                : #c6c5c4;
+    --color-gray-10                : #dcdbda;
+    --color-gray-9                 : #e0dfde;
+    --color-gray-8                 : #e3e2e1;
+    --color-gray-7                 : #e7e6e5;
+    --color-gray-6                 : #eae9e9;
+    --color-gray-5                 : #eeeded;
+    --color-gray-4                 : #f1f1f0;
+    --color-gray-3                 : #f5f4f4;
+    --color-gray-2                 : #f8f8f8;
+    --color-gray-1                 : #fcfbfb;
+    --color-white                  : #ffffff;
+
+    /* text
+     */
+    --color-text                   : var(--color-gray-19);
+    --color-text-dark              : var(--color-black);
+    --color-text-light             : var(--color-gray-14);
+    --color-placeholder            : var(--color-gray-14);
+
+    /* buttons
+     */
+    --color-btn                    : var(--color-gray-6);
+    --color-btn-text               : var(--color-black);
+    --color-btn-hover              : var(--color-gray-8);
+    --color-btn-hover-text         : var(--color-gray-19);
+    --color-btn-primary            : var(--color-1);
+    --color-btn-primary-text       : var(--color-white);
+    --color-btn-primary-hover      : var(--color-gray-19);
+    --color-btn-primary-hover-text : var(--color-white);
+    --color-btn-stroke             : var(--color-gray-19);
+    --color-btn-stroke-text        : var(--color-gray-19);
+    --color-btn-stroke-hover       : var(--color-gray-19);
+    --color-btn-stroke-hover-text  : var(--color-white);
+
+    /* preloader
+     */
+    --color-preloader-bg           : var(--color-gray-19);
+    --color-loader                 : white;
+    --color-loader-light           : rgba(255, 255, 255, 0.1);
+
+    /* others
+     */
+    --color-body                   : white;
+    --color-border                 : rgba(0, 0, 0, .08);
+    --border-radius                : 3px;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## spacing and typescale
+ * ------------------------------------------------------------------- */
+:root {
+
+    /* spacing
+     * base font size: 18px 
+     * vertical space unit : 32px
+     */
+    --base-size        : 62.5%;
+    --multiplier       : 1;
+    --base-font-size   : calc(1.8rem * var(--multiplier));
+    --space            : calc(3.2rem * var(--multiplier));
+
+    /* vertical spacing 
+     */
+    --vspace-0_125     : calc(0.125 * var(--space));
+    --vspace-0_25      : calc(0.25 * var(--space));
+    --vspace-0_375     : calc(0.375 * var(--space));
+    --vspace-0_5       : calc(0.5 * var(--space));
+    --vspace-0_625     : calc(0.625 * var(--space));
+    --vspace-0_75      : calc(0.75 * var(--space));
+    --vspace-0_875     : calc(0.875 * var(--space));
+    --vspace-1         : calc(var(--space));
+    --vspace-1_25      : calc(1.25 * var(--space));
+    --vspace-1_5       : calc(1.5 * var(--space));
+    --vspace-1_75      : calc(1.75 * var(--space));
+    --vspace-2         : calc(2 * var(--space));
+    --vspace-2_5       : calc(2.5 * var(--space));
+    --vspace-3         : calc(3 * var(--space));
+    --vspace-3_5       : calc(3.5 * var(--space));
+    --vspace-4         : calc(4 * var(--space));
+    --vspace-4_5       : calc(4.5 * var(--space));
+    --vspace-5         : calc(5 * var(--space));
+
+    /* type scale
+     * ratio 1:2 | base: 18px
+     * -------------------------------------------------------
+     *
+     * --text-display-3 = (77.40px)
+     * --text-display-2 = (64.50px)
+     * --text-display-1 = (53.75px)
+     * --text-xxxl      = (44.79px)
+     * --text-xxl       = (37.32px)
+     * --text-xl        = (31.10px)
+     * --text-lg        = (25.92px)
+     * --text-md        = (21.60px)
+     * --text-size      = (18.00px) BASE
+     * --text-sm        = (15.00px)
+     * --text-xs        = (12.50px)
+     *
+     * ---------------------------------------------------------
+     */
+    --text-scale-ratio : 1.2;
+    --text-size        : var(--base-font-size);
+    --text-xs          : calc((var(--text-size) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+    --text-sm          : calc(var(--text-xs) * var(--text-scale-ratio));
+    --text-md          : calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-lg          : calc(var(--text-md) * var(--text-scale-ratio));
+    --text-xl          : calc(var(--text-lg) * var(--text-scale-ratio));
+    --text-xxl         : calc(var(--text-xl) * var(--text-scale-ratio));
+    --text-xxxl        : calc(var(--text-xxl) * var(--text-scale-ratio));
+    --text-display-1   : calc(var(--text-xxxl) * var(--text-scale-ratio));
+    --text-display-2   : calc(var(--text-display-1) * var(--text-scale-ratio));
+    --text-display-3   : calc(var(--text-display-2) * var(--text-scale-ratio));
+
+    /* default button height
+     */
+    --vspace-btn       : var(--vspace-2);
+}
+
+/* on mobile devices below 600px, change the value of '--multiplier' 
+ * to adjust the values of base font size and vertical space unit.
+ */
+@media screen and (max-width: 600px) {
+    :root {
+        --multiplier : .9375;
+    }
+}
+
+/* ------------------------------------------------------------------- 
+ * ## grid variables
+ * ------------------------------------------------------------------- */
+:root {
+
+    /* widths for rows and containers
+     */
+    --width-full     : 100%;
+    --width-max      : 1180px;
+    --width-wide     : 1400px;
+    --width-wider    : 1600px;
+    --width-widest   : 1800px;
+    --width-narrow   : 1000px;
+    --width-narrower : 800px;
+    --width-grid-max : var(--width-max);
+
+    /* gutter
+     */
+    --gutter         : 2.2rem;
+}
+
+/* on medium screen devices
+ */
+@media screen and (max-width: 1200px) {
+    :root {
+        --gutter : 2rem;
+    }
+}
+
+/* on mobile devices
+ */
+@media screen and (max-width: 600px) {
+    :root {
+        --gutter : 1rem;
+    }
+}
+
+
+
+/* ===================================================================
+ * # FOOTER
+ *
+ *
+ * ------------------------------------------------------------------- */
+.s-footer {
+    background-color : var(--color-gray-2);
+    padding-top      : calc(5.5 * var(--space));
+    padding-bottom   : var(--vspace-3);
+    margin-top       : auto;
+    position         : relative;
+}
+
+.s-footer h6 {
+    margin-top : 0;
+}
+
+.s-footer__btns {
+    margin-top  : var(--vspace-3_5);
+    align-items : flex-start;
+}
+
+.s-footer .contact-list {
+    list-style  : none;
+    margin-left : 0;
+}
+
+.s-footer .contact-list a {
+    color : var(--color-text);
+}
+
+.s-footer .contact-list a:focus,
+.s-footer .contact-list a:hover {
+    color : var(--color-1);
+}
+
+.s-footer .contact-list li {
+    padding-left : 0;
+}
+
+.s-footer__bottom {
+    border-top  : 1px solid var(--color-gray-10);
+    margin-top  : var(--vspace-2);
+    padding-top : var(--vspace-1);
+}
+
+.s-footer__bottom-left {
+    padding-right : 4.4rem;
+}
+
+.s-footer__bottom-right {
+    padding-left : 4.4rem;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## contact btn
+ * ------------------------------------------------------------------- */
+.s-footer__contact-btn {
+    --color-btn-primary       : var(--color-gray-19);
+    --color-btn-primary-hover : var(--color-1);
+    padding-top               : calc(var(--vspace-0_75) + var(--vspace-0_75));
+    padding-bottom            : var(--vspace-0_5);
+}
+
+.s-footer__contact-btn .btn {
+    --btn-height : 7.2rem;
+    margin       : 0;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## subscription form
+ * ------------------------------------------------------------------- */
+.s-footer__subscribe {
+    --input-height : 7.2rem;
+    --btn-width    : 180px;
+}
+
+.s-footer__subscribe h6 {
+    margin-bottom : var(--vspace-0_75);
+}
+
+.s-footer__subscribe form {
+    display       : flex;
+    flex-flow     : row wrap;
+    margin-bottom : 0;
+}
+
+.s-footer__subscribe input[type="email"],
+.s-footer__subscribe input[type="submit"],
+.s-footer__subscribe .ms-status {
+    flex : none;
+}
+
+.s-footer__subscribe input[type="email"] {
+    --input-height   : 7.2rem;
+    width            : calc(100% - var(--btn-width));
+    background-color : var(--color-gray-6);
+    color            : var(--color-text);
+    border           : none;
+    padding          : var(--input-vpadding) calc(2.8rem - 1px);
+    text-align       : left;
+    margin           : 0;
+}
+
+.s-footer__subscribe input[type="email"]:focus,
+.s-footer__subscribe input[type="email"]:hover {
+    box-shadow : none;
+}
+
+.s-footer__subscribe input[type="submit"] {
+    --btn-height : var(--input-height);
+    width        : var(--btn-width);
+    margin       : 0;
+}
+
+.s-footer__subscribe .mc-status {
+    width       : 100%;
+    margin-top  : var(--vspace-0_5);
+    font-size   : var(--text-sm);
+    font-weight : 400;
+    color       : var(--color-1);
+}
+
+/* ------------------------------------------------------------------- 
+ * ## footer social
+ * ------------------------------------------------------------------- */
+.s-footer__social {
+    list-style  : none;
+    display     : flex;
+    margin-left : 0;
+}
+
+.s-footer__social li {
+    padding-left : 0;
+    margin-right : .8rem;
+}
+
+.s-footer__social svg {
+    height : var(--vspace-1);
+    width  : var(--vspace-1);
+}
+
+.s-footer__social svg path {
+    fill : var(--color-text);
+}
+
+/* ------------------------------------------------------------------- 
+ * ## copyright
+ * ------------------------------------------------------------------- */
+.ss-copyright span {
+    font-size   : calc(var(--text-size) * 0.8889);
+    line-height : var(--vspace-1);
+    display     : inline-block;
+}
+
+.ss-copyright span::after {
+    content : "·";
+    display : inline-block;
+    padding : 0 1rem 0 1.2rem;
+    color   : var(--color-gray-19);
+}
+
+.ss-copyright span:last-child::after {
+    display : none;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## go top
+ * ------------------------------------------------------------------- */
+.ss-go-top {
+    z-index    : 2;
+    opacity    : 0;
+    visibility : hidden;
+    transform  : translate(0, 200%);
+    transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    position   : fixed;
+    bottom     : 6rem;
+    right      : 4rem;
+}
+
+.ss-go-top a {
+    display          : flex;
+    align-items      : center;
+    justify-content  : center;
+    text-decoration  : none;
+    border           : none;
+    height           : calc(1.875 * var(--space));
+    width            : calc(1.875 * var(--space));
+    border-radius    : 50%;
+    background-color : #0C0C0C;
+    transition       : all .3s;
+    position         : relative;
+}
+
+.ss-go-top a:focus svg path,
+.ss-go-top a:hover svg path {
+    fill : white;
+}
+
+.ss-go-top svg {
+    height : var(--vspace-0_75);
+    width  : var(--vspace-0_75);
+}
+
+.ss-go-top svg path {
+    fill : white;
+}
+
+.ss-go-top.link-is-visible {
+    opacity    : 1;
+    visibility : visible;
+    transform  : translate(0, 0);
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * footer
+ * ------------------------------------------------------------------- */
+@media screen and (max-width: 1200px) {
+    .s-footer__bottom-left {
+        padding-right : var(--gutter);
+    }
+
+    .s-footer__bottom-right {
+        padding-left : var(--gutter);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .s-footer__btns {
+        margin-top : var(--vspace-1);
+    }
+
+    .s-footer__contact-btn {
+        margin-bottom : var(--vspace-0_5);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .s-footer {
+        padding-top    : var(--vspace-4);
+        padding-bottom : var(--vspace-2_5);
+    }
+
+    .ss-go-top {
+        right  : var(--vspace-1);
+        bottom : var(--vspace-1);
+    }
+
+    .ss-go-top a {
+        height : var(--vspace-1_75);
+        width  : var(--vspace-1_75);
+    }
+
+    .ss-go-top svg {
+        height : var(--vspace-0_625);
+        width  : var(--vspace-0_625);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .s-footer__subscribe form {
+        display : block;
+    }
+
+    .s-footer__subscribe input[type="email"],
+    .s-footer__subscribe input[type="submit"] {
+        width      : 100%;
+        text-align : center;
+    }
+
+    .s-footer__subscribe input[type="email"] {
+        margin-bottom : var(--vspace-0_625);
+    }
+
+    .ss-go-top {
+        right  : var(--vspace-0_75);
+        bottom : var(--vspace-0_75);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .s-footer__bottom-left {
+        padding-right : 0;
+    }
+
+    .s-footer__bottom-right {
+        padding-left : 0;
+    }
+
+    .ss-go-top a {
+        height : var(--vspace-1_5);
+        width  : var(--vspace-1_5);
+    }
+}
